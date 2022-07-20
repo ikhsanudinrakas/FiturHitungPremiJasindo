@@ -90,6 +90,10 @@
     color: #878787;
 }
 
+.select-input:hover{
+    cursor: pointer;
+}
+
 .button-hasil{
     display: flex;
     align-items: center;
