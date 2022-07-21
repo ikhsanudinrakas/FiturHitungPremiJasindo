@@ -62,9 +62,7 @@
         };
     </script>
 
-    <script type="text/javascript" src="index.js">
-    // 
-    </script>
+    <script type="text/javascript" src="index.js"> </script>
 
 </head>
 
@@ -463,7 +461,7 @@
                            <h1 class="simulasi-title">SIMULASI PERHITUNGAN PREMI</h1>
                            <p class="simulasi-subtitle">Dapatkan Simulasi Perhitungan Premi untuk Kendaraan Anda disini</p>
                             
-                           <form action="" class="simulasi-form" >
+                           <form action="" class="simulasi-form" onsubmit="return false">
 
                                 <div class="form-header">
                                     <h5>Masukkan Data Anda</h5>
@@ -520,9 +518,9 @@
 
                                     </div>
                                     
-                                    <div class="button-hasil">
-                                        <button class="premi-hasil">Hasil</button>
-                                        <div class="hasil" value="hasil">Rp.150.000.000 - Rp.450.000.000</div>
+                                    <div class="button-hasil" id="button-hasil">
+                                        <button onclick="nilai_input()"  class="premi-hasil">Hasil</button>
+                                        <div class="hasil" id="hasil">Rp.150.000.000 - Rp.450.000.000</div>
                                     </div>
                                 </div>
                             
