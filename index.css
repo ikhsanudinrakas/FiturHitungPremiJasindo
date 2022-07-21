@@ -56,7 +56,7 @@
 }
 
 .ul-kami li{
-    list-style-type: circle;
+    list-style-type: disc;
     margin-top: 1rem;
 }
 
@@ -91,11 +91,12 @@
 
 .number-input{
     border: none;
-    width: 200px;
+    width: 170px;
     border-bottom: 0.5px solid rgb(156, 155, 155);
     padding-bottom: 0.25rem;
     color: #878787;
     background: white !important;
+    font-size: 0.8rem;
 }
 
 .number_input:hover, 

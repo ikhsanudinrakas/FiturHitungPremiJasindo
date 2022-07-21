@@ -9,6 +9,7 @@ function nilai_input() {
     var wilayah = document.getElementById('wilayah').value;
     var nilai = document.getElementById('nilai').value.split('.').join("");
 
+    // Comperehensive
     if (jaminan == 'Comperehensive')
     {
         //NON TRUK & NON BUS
@@ -158,7 +159,7 @@ function nilai_input() {
             }
         }
 
-        // RODA 2
+        // RODA DUA
         else if (tipe == 'Kategori 4')
         {
             if(wilayah == 'Wilayah 1')
@@ -181,6 +182,7 @@ function nilai_input() {
         }
     }
 
+    // Total Loss Only
     else if (jaminan == 'TLO')
     {
 
@@ -331,7 +333,7 @@ function nilai_input() {
             }
         }
 
-        //RODA 2
+        //RODA DUA
         else if (tipe == 'Kategori 4')
         {
             if(wilayah == 'Wilayah 1')
@@ -364,7 +366,5 @@ function nilai_input() {
 
     // TAMPIL HASIL
     document.getElementById("hasil").innerHTML= "Rp. "+   nilai_bawah.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "  -  Rp. "  +nilai_atas.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    
-}
-    
 
+}
