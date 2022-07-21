@@ -32,7 +32,36 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
     <script src="//use.fontawesome.com/a22d15237a.js"></script>
     <link rel="stylesheet" type="text/css" href="https://jasindo.co.id/templates/css/combined.raw.css">
+
+    <!-- KITA -->
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function updateTextView(_obj){
+        var num = getNumber(_obj.val());
+        if(num==0){
+            _obj.val('');
+        }else{
+            _obj.val(num.toLocaleString());
+        }
+        }
+        function getNumber(_str){
+        var arr = _str.split('');
+        var out = new Array();
+        for(var cnt=0;cnt<arr.length;cnt++){
+            if(isNaN(arr[cnt])==false){
+            out.push(arr[cnt]);
+            }
+        }
+        return Number(out.join(''));
+        }
+
+        $(document).ready(function(){
+        $('#nilai').on('keyup',function(){
+            updateTextView($(this));
+        });
+        });
+    </script>
 
     <link rel="stylesheet" type="text/css" href="https://jasindo.co.id/templates/css/new-style.css">
     <script>
@@ -504,14 +533,18 @@
                                                 <div class="input-title">Jaminan Pokok</div>
                                                 <select class="select-input" id="jaminan">
                                                     <option value=""  disabled selected> Pilih Jaminan</option>
-                                                    <option value="Jaminan 1">Comperehensive</option>
-                                                    <option value="Jaminan 2">Total Loss Only</option>
+                                                    <option value="Comperehensive">Comperehensive</option>
+                                                    <option value="TLO">Total Loss Only</option>
                                                 </select>
                                             </div>
 
                                             <div class="input">
                                                 <div class="input-title">Nilai Pasar Kendaraan</div>
-                                                <input class="select-input" id="nilai" type="text" inputmode="numeric" pattern="\d*"  placeholder="Masukkan Harga Kendaraan">
+                                                <div class="wrap-1">
+                                                    <div class="rp">Rp. </div>
+                                                    <input class="number-input"  id="nilai" type="text"  placeholder="Masukkan Harga Kendaraan" autocomplete="off">
+                                                </div>
+                                                
                                                 </input>
                                             </div>
                                         </div>
@@ -520,8 +553,9 @@
                                     
                                     <div class="button-hasil" id="button-hasil">
                                         <button onclick="nilai_input()"  class="premi-hasil">Hasil</button>
-                                        <div class="hasil" id="hasil">Rp.150.000.000 - Rp.450.000.000</div>
+                                        <div class="hasil" id="hasil">Rp.0 - Rp.0</div>
                                     </div>
+
                                 </div>
                             
                             </form>

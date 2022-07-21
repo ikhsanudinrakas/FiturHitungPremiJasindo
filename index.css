@@ -17,11 +17,11 @@
 }
 
 .simulasi-form{
-    margin-top: 2rem;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-radius: 10px;
-    width: fit-content;
-    
+    width: 95%;
+    margin: auto;
+    margin-top: 2rem;
 }
 
 .form-header{
@@ -89,8 +89,28 @@
     color: #878787;
 }
 
+.number-input{
+    border: none;
+    width: 200px;
+    border-bottom: 0.5px solid rgb(156, 155, 155);
+    padding-bottom: 0.25rem;
+    color: #878787;
+    background: white !important;
+}
+
+.number_input:hover, 
 .select-input:hover{
     cursor: pointer;
+}
+
+.wrap-1{
+    display: flex;
+    gap: 0rem 0.5rem;
+}
+
+.rp{
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .button-hasil{
@@ -110,7 +130,7 @@
     padding: 0.8rem 4rem;
     border-radius: 20px;
     font-size: 1.25rem;
-cursor: pointer;
+    cursor: pointer;
     transition: all ease-in 250ms;
 }
 
@@ -121,7 +141,7 @@ cursor: pointer;
 }
 
 .hasil{
-   font-size: 1.2rem;
+   font-size: 1.1rem;
    font-weight: bold;
    margin-left: 1.5rem;
 }
