@@ -37,31 +37,37 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        function updateTextView(_obj){
-        var num = getNumber(_obj.val());
-        if(num==0){
-            _obj.val('');
-        }else{
-            _obj.val(num.toLocaleString());
+        function updateTextView(_obj)
+        {
+            var num = getNumber(_obj.val());
+            if(num==0){
+                _obj.val('');
+            }else{
+                _obj.val(num.toLocaleString());
         }
-        }
-        function getNumber(_str){
-        var arr = _str.split('');
-        var out = new Array();
-        for(var cnt=0;cnt<arr.length;cnt++){
-            if(isNaN(arr[cnt])==false){
-            out.push(arr[cnt]);
-            }
-        }
-        return Number(out.join(''));
         }
 
-        $(document).ready(function(){
-        $('#nilai').on('keyup',function(){
-            updateTextView($(this));
-        });
+        function getNumber(_str)
+        {
+            var arr = _str.split('');
+            var out = new Array();
+            for(var cnt=0;cnt<arr.length;cnt++){
+                if(isNaN(arr[cnt])==false){
+                out.push(arr[cnt]);
+                }
+            }
+            return Number(out.join(''));
+        }
+
+        $(document).ready(function()
+        {
+            $('#nilai').on('keyup',function()
+            {
+                updateTextView($(this));
+            });
         });
     </script>
+    <!-- END KITA -->
 
     <link rel="stylesheet" type="text/css" href="https://jasindo.co.id/templates/css/new-style.css">
     <script>
