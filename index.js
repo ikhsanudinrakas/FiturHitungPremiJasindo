@@ -1,5 +1,16 @@
+function remove_dot(x)
+{
+    return x.split('.').join("");
+}
+
+function add_comma(x)
+{
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function nilai_input() {
 
+    // DEKLARASI VARIABEL YANG DICARI
     var batas_atas;
     var batas_bawah;
 
@@ -7,7 +18,7 @@ function nilai_input() {
     var jaminan = document.getElementById('jaminan').value;
     var tipe = document.getElementById('tipe').value;
     var wilayah = document.getElementById('wilayah').value;
-    var nilai = document.getElementById('nilai').value.split('.').join("");
+    var nilai = remove_dot(document.getElementById('nilai').value);
 
     // Comperehensive
     if (jaminan == 'Comperehensive')
@@ -365,6 +376,6 @@ function nilai_input() {
     var nilai_bawah = Math.floor(nilai_bawah_raw);
 
     // TAMPIL HASIL
-    document.getElementById("hasil").innerHTML= "Rp. "+   nilai_bawah.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "  -  Rp. "  +nilai_atas.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("hasil").innerHTML= "Rp. "+   add_comma(nilai_bawah)+ "  -  Rp. "  +add_comma(nilai_atas);
 
 }
