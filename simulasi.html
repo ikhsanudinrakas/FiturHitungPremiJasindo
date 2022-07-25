@@ -44,7 +44,17 @@
                 _obj.val('');
             }else{
                 _obj.val(num.toLocaleString());
+            }
         }
+
+        function updateTextView2(_obj)
+        {
+            var num = getNumber(_obj.val());
+            if(num==0){
+                _obj.val('');
+            }else{
+                // NONE
+            }
         }
 
         function getNumber(_str)
@@ -65,8 +75,13 @@
             {
                 updateTextView($(this));
             });
+
+            $('#tahun').on('keyup',function()
+            {
+                updateTextView2($(this));
+            });
         });
-    </script>
+    </script>   
     <!-- END KITA -->
 
     <link rel="stylesheet" type="text/css" href="https://jasindo.co.id/templates/css/new-style.css">
@@ -493,65 +508,113 @@
                         <div class="mainContent">
                            <!-- MAIN -->
 
-                           <h1 class="simulasi-title">SIMULASI PERHITUNGAN PREMI</h1>
+                           <h1 class="simulasi-title">KALKULATOR PERHITUNGAN PREMI KENDARAAN</h1>
                            <p class="simulasi-subtitle">Dapatkan Simulasi Perhitungan Premi untuk Kendaraan Anda disini</p>
                             
                            <form action="" class="simulasi-form" onsubmit="return false">
 
                                 <div class="form-header">
-                                    <h5>Masukkan Data Anda</h5>
+                                    <h5>Simulasi Perhitungan</h5>
+                                    <small>Masukkan Data Anda</small>
                                 </div>
 
                                 <div class="form-content">
                                     <div class="content-wrap">
-                                        <div class="keterangan">
-                                            <h5 class="keterangan-title">Keterangan</h5>
-                                            <ul class="ul-kami">
-                                                <li>Wilayah 1 : Sumatera & Kepulauan Sekitarnya</li>
-                                                <li>Wilayah 2 : DKI Jakarta, Jawa Barat & Banten</li>
-                                                <li>Wilayah 3 : Wilayah Lainnya</li>
-                                            </ul>
-                                        </div>
+                            
                                         <div class="input-field-wrap">
 
-                                            <div class="input">
+                                            <div class="input-big">
                                                 <div class="input-title">Wilayah</div>
                                                 <select class="select-input" id="wilayah">
                                                     <option value=""  disabled selected>Pilih Wilayah</option>
-                                                    <option value="Wilayah 1">Wilayah 1</option>
-                                                    <option value="Wilayah 2">Wilayah 2</option>
-                                                    <option value="Wilayah 3">Wilayah 3</option>
+                                                    <option value="Wilayah 1">I (Sumatera & Kepulauan Sekitarnya)</option>
+                                                    <option value="Wilayah 2">II (DKI Jakarta, Jawa Barat & Banten)</option>
+                                                    <option value="Wilayah 3">III (Wilayah Lainnya)</option>
                                                 </select>
                                             </div>
 
-                                            <div class="input">
-                                                <div class="input-title">Tipe</div>
-                                                <select class="select-input" id="tipe">
-                                                    <option value=""  disabled selected>Pilih Tipe</option>
-                                                    <option value="Kategori 1">Non Bus & Non Truk</option>
-                                                    <option value="Kategori 2">Truk & Pickup</option>
-                                                    <option value="Kategori 3">Bus</option>
-                                                    <option value="Kategori 4">Roda Dua</option>
-                                                </select>
-                                            </div> 
+                                            <div class="input-small">
 
-                                            <div class="input">
-                                                <div class="input-title">Jaminan Pokok</div>
-                                                <select class="select-input" id="jaminan">
-                                                    <option value=""  disabled selected> Pilih Jaminan</option>
-                                                    <option value="Comperehensive">Comperehensive</option>
-                                                    <option value="TLO">Total Loss Only</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="input">
-                                                <div class="input-title">Nilai Pasar Kendaraan</div>
-                                                <div class="wrap-1">
-                                                    <div class="rp">Rp. </div>
-                                                    <input class="number-input"  id="nilai" type="text"  placeholder="Masukkan Harga Kendaraan" autocomplete="off">
+                                                <div class="input">
+                                                    <div class="input-title">Tipe</div>
+                                                    <select class="select-input" id="tipe">
+                                                        <option value=""  disabled selected>Pilih Tipe</option>
+                                                        <option value="Kategori 1">Non Bus & Non Truk</option>
+                                                        <option value="Kategori 2">Truk & Pickup</option>
+                                                        <option value="Kategori 3">Bus</option>
+                                                        <option value="Kategori 4">Roda Dua</option>
+                                                    </select>
+                                                </div> 
+    
+                                                <div class="input">
+                                                    <div class="input-title">Jaminan Pokok</div>
+                                                    <select class="select-input" id="jaminan">
+                                                        <option value=""  disabled selected> Pilih Jaminan</option>
+                                                        <option value="Comperehensive">Comperehensive</option>
+                                                        <option value="TLO">Total Loss Only</option>
+                                                    </select>
                                                 </div>
+    
+                                                <div class="input">
+                                                    <div class="input-title">Nilai Pasar Kendaraan</div>
+                                                    <div class="wrap-1">
+                                                        <div class="rp">Rp. </div>
+                                                        <input class="number-input"  id="nilai" type="text"  placeholder="Masukkan Harga Kendaraan" autocomplete="off">
+                                                    </div>
+                                                    
+                                                    </input>
+                                                </div>
+    
+                                                <div class="input">
+                                                    <div class="input-title">Tahun Kendaraan</div>
+                                                    <input class="number-input"  id="tahun" type="text"  placeholder="Masukkan Tahun Kendaraan" autocomplete="off"></input>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="checkbox">
+
+                                                <h5 class="checkbox-title">Jaminan Perluasan</h5>
                                                 
-                                                </input>
+                                                <div class="check-wrap-1">
+
+                                                    <div class="align-center">
+                                                        <input type="checkbox" id="kecelakaan" name="kecelakaan" value="kecelakaan">
+                                                        <label for="kecelakaan">Kecelakaan Diri Penumpang</label><br>
+                                                    </div>
+                                                    
+                                                    <div class="align-center">
+                                                        <input type="checkbox" id="banjir" name="banjir" value="banjir">
+                                                        <label for="banjir">Banjir & Angin Topan</label><br>
+                                                    </div>
+                                                   
+                                                    
+                                                    <div class="align-center">
+                                                        <input type="checkbox" id="gempa" name="gempa" value="gempa">
+                                                        <label for="gempa">Gempa Bumi & Tsunami</label><br>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div class="check-wrap-1">
+
+                                                    <div class="align-center">
+                                                        <input type="checkbox" id="tanggung" name="tanggung" value="true">
+                                                        <label for="tanggung">Tanggung Jawab Hukum Pihak Ketiga</label><br>
+                                                    </div>
+
+                                                    <div class="align-center">
+                                                        <input type="checkbox" id="kerusuhan" name="kerusuhan" value="kerusuhan">
+                                                        <label for="kerusuhan">Huru-Hara & Kerusuhan (SRCC)</label><br>
+                                                    </div>
+                                                
+                                                    <div class="align-center">
+                                                        <input type="checkbox" id="terorisme" name="terorisme" value="terorisme">
+                                                        <label for="terorisme">Terorisme & Sabotase</label><br>
+                                                    </div>
+                                                   
+                                                </div>
+                                               
                                             </div>
                                         </div>
 
@@ -559,7 +622,10 @@
                                     
                                     <div class="button-hasil" id="button-hasil">
                                         <button onclick="nilai_input()"  class="premi-hasil">Hasil</button>
-                                        <div class="hasil" id="hasil">Rp.0 - Rp.0</div>
+                                        <div class="hasil-center">
+                                            <div class="hasil" id="hasil">Rp. 0</div>
+                                        </div>
+                                        
                                     </div>
 
                                 </div>

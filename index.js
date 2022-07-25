@@ -11,7 +11,6 @@ function add_comma(x)
 function nilai_input() {
 
     // DEKLARASI VARIABEL YANG DICARI
-    var batas_atas;
     var batas_bawah;
 
     // AMBIL NILAI DARI FORM INPUT
@@ -19,8 +18,15 @@ function nilai_input() {
     var tipe = document.getElementById('tipe').value;
     var wilayah = document.getElementById('wilayah').value;
     var nilai = remove_dot(document.getElementById('nilai').value);
+    var tahun = document.getElementById('tahun').value;
 
-    // Comperehensive
+    var biaya_tjh = 0;
+    if(document.getElementById('tanggung').checked)
+    {       
+        biaya_tjh = nilai * 0.01;
+    }
+
+    // PREMI DASAR Comperehensive
     if (jaminan == 'Comperehensive')
     {
         //NON TRUK & NON BUS
@@ -191,9 +197,10 @@ function nilai_input() {
                 batas_atas = 0.0350;
             }
         }
+
     }
 
-    // Total Loss Only
+    // PREMI DASAR TLO
     else if (jaminan == 'TLO')
     {
 
@@ -367,15 +374,47 @@ function nilai_input() {
         }
     }
 
-    // HASIL
-    var nilai_atas_raw = nilai*batas_atas;
+    // PREMI TAHUN
+    const date = new Date();
+    let tahun_sekarang = date.getFullYear();
+    var tahun_kendaraan = tahun_sekarang - tahun;
+    var biaya_reload = 0;
+
+    if(tahun_kendaraan==5)
+    {
+        biaya_reload = nilai * 0.05;
+    }
+    else if(tahun_kendaraan==6)
+    {
+        biaya_reload = nilai * 0.1;
+    }
+    else if(tahun_kendaraan==7)
+    {
+        biaya_reload = nilai * 0.15;
+    }
+    else if(tahun_kendaraan==8)
+    {
+        biaya_reload = nilai * 0.2;
+    }
+    else if(tahun_kendaraan==9)
+    {
+        biaya_reload = nilai * 0.25;
+    }
+    else if(tahun_kendaraan==10)
+    {
+        biaya_reload = nilai * 0.3;
+    }
+
+    // HASIL AWAL
     var nilai_bawah_raw = nilai*batas_bawah;
 
     // PEMBULATAN
-    var nilai_atas = Math.floor(nilai_atas_raw);
     var nilai_bawah = Math.floor(nilai_bawah_raw);
 
+    // OUTPUT
+    var output =  nilai_bawah + biaya_tjh + biaya_reload;
+
     // TAMPIL HASIL
-    document.getElementById("hasil").innerHTML= "Rp. "+   add_comma(nilai_bawah)+ "  -  Rp. "  +add_comma(nilai_atas);
+    document.getElementById("hasil").innerHTML= "Rp. "+ add_comma(output);
 
 }
