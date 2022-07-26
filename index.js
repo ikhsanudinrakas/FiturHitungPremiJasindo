@@ -20,12 +20,153 @@ function nilai_input() {
     var nilai = remove_dot(document.getElementById('nilai').value);
     var tahun = document.getElementById('tahun').value;
 
-    var biaya_tjh = 0;
+    // BIAYA TJH KENDARAAN
+    var biaya_tjh = 0; 
     if(document.getElementById('tanggung').checked)
     {       
-        biaya_tjh = nilai * 0.01;
+        if(tipe == "Kategori 1" || tipe == "Kategori 4")
+        {
+            biaya_tjh = nilai * 0.01;
+        }
+
+        else if (tipe == "Kategori 2" || tipe == "Kategori 3")
+        {
+            biaya_tjh = nilai * 0.015;
+        }
     }
 
+    // BIAYA TJH PENUMPANG
+    var biaya_tjhp= 0; 
+    if(document.getElementById('penumpang').checked)
+    {       
+         biaya_tjhp = nilai * 0.005;
+    }
+
+    // BIAYA KECELAKAAN DIRI
+    var biaya_kecelakaan= 0; 
+    if(document.getElementById('kecelakaan').checked)
+    {       
+        biaya_kecelakaan = nilai * 0.005;
+    }
+
+    // BIAYA KERUSUHAN
+    var biaya_kerusuhan = 0;
+    if(document.getElementById('kerusuhan').checked)
+    {       
+        if(jaminan == "Comperehensive")
+        {
+            biaya_kerusuhan = nilai * 0.0005;
+        }
+
+        else if (jaminan == "TLO")
+        {
+            biaya_kerusuhan = nilai * 0.00035;
+        }
+    }
+
+    // BIAYA TERORISME
+    var biaya_terorisme = 0;
+    if(document.getElementById('terorisme').checked)
+    {       
+        if(jaminan == "Comperehensive")
+        {
+            biaya_terorisme = nilai * 0.0005;
+        }
+
+        else if (jaminan == "TLO")
+        {
+            biaya_terorisme = nilai * 0.00035;
+        }
+    }
+
+    // BIAYA BANJIR
+    var biaya_banjir = 0;
+    if(document.getElementById('banjir').checked)
+    {       
+        if(wilayah == "Wilayah 1")
+        {
+            if(jaminan == 'Comperehensive')
+            {
+                biaya_banjir = nilai * 0.00075;
+            }
+
+            else if (jaminan == "TLO")
+            {
+                biaya_banjir = nilai * 0.0005;
+            }
+        }
+
+        else if (wilayah == "Wilayah 2")
+        {
+            if(jaminan == 'Comperehensive')
+            {
+                biaya_banjir = nilai * 0.001;
+            }
+
+            else if (jaminan == "TLO")
+            {
+                biaya_banjir = nilai * 0.00075;
+            }
+        }
+
+        else if (wilayah == "Wilayah 3")
+        {
+            if(jaminan == 'Comperehensive')
+            {
+                biaya_banjir = nilai * 0.00075;
+            }
+
+            else if (jaminan == "TLO")
+            {
+                biaya_banjir = nilai * 0.0005;
+            }
+        }
+    }
+
+    // BIAYA GEMPA
+    var biaya_gempa = 0;
+    if(document.getElementById('gempa').checked)
+    {       
+        if(wilayah == "Wilayah 1")
+        {
+            if(jaminan == 'Comperehensive')
+            {
+                biaya_gempa = nilai * 0.0012;
+            }
+
+            else if (jaminan == "TLO")
+            {
+                biaya_gempa = nilai * 0.00085;
+            }
+        }
+
+        else if (wilayah == "Wilayah 2")
+        {
+            if(jaminan == 'Comperehensive')
+            {
+                biaya_gempa = nilai * 0.001;
+            }
+
+            else if (jaminan == "TLO")
+            {
+                biaya_gempa = nilai * 0.00075;
+            }
+        }
+
+        else if (wilayah == "Wilayah 3")
+        {
+            if(jaminan == 'Comperehensive')
+            {
+                biaya_gempa = nilai * 0.00075;
+            }
+
+            else if (jaminan == "TLO")
+            {
+                biaya_gempa = nilai * 0.0005;
+            }
+        }
+    }
+    
     // PREMI DASAR Comperehensive
     if (jaminan == 'Comperehensive')
     {
@@ -412,9 +553,18 @@ function nilai_input() {
     var nilai_bawah = Math.floor(nilai_bawah_raw);
 
     // OUTPUT
-    var output =  nilai_bawah + biaya_tjh + biaya_reload;
+    var output =  nilai_bawah + biaya_tjh + biaya_reload + biaya_kerusuhan + biaya_terorisme + biaya_tjhp + biaya_kecelakaan + biaya_banjir + biaya_gempa;
 
     // TAMPIL HASIL
-    document.getElementById("hasil").innerHTML= "Rp. "+ add_comma(output);
+    if(isNaN(output) || output==0)
+    {
+        alert("Error, Masukan Data Yang Dibutuhkan");
+    }
+
+    else{
+        document.getElementById("hasil").innerHTML= "Rp. "+ add_comma(output);
+    }
+
+    
 
 }
