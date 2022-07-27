@@ -558,13 +558,11 @@ function nilai_input() {
     // TAMPIL HASIL
     if(isNaN(output) || output==0)
     {
-        alert("Error, Masukan Data Yang Dibutuhkan");
+        document.getElementById("hasil").innerHTML= "Input Data Dengan Lengkap";
     }
 
     else{
         document.getElementById("hasil").innerHTML= "Rp. "+ add_comma(output);
     }
-
-    
 
 }
