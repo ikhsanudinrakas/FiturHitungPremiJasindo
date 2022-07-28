@@ -4,8 +4,8 @@ const path = require('path')
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 720,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -29,16 +29,12 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
-
-
-
-
-
+// ELECTRON END
 
 
 function remove_dot(x)
 {
-    return x.split('.').join("");
+    return x.split(/[.,]/).join("");
 }
 
 function add_comma(x)
@@ -596,7 +592,7 @@ function nilai_input() {
     // TAMPIL HASIL
     if(isNaN(output) || output==0)
     {
-        document.getElementById("hasil").innerHTML= "Input Data Dengan Lengkap";
+        document.getElementById("hasil").innerHTML= "Masukkan Input Dengan Lengkap";
     }
 
     else{

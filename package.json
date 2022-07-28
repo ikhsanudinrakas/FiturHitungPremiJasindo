@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "electron": "^19.0.10"
+    "electron": "^19.0.10",
+    "electron-packager": "^15.5.1"
   },
   "name": "apk_asuransi_jasindo",
   "version": "1.0.0",
@@ -20,7 +21,6 @@
     "define-properties": "^1.1.4",
     "detect-node": "^2.1.0",
     "duplexer3": "^0.1.5",
-    "electron-packager": "^15.5.1",
     "encodeurl": "^1.0.2",
     "end-of-stream": "^1.4.4",
     "env-paths": "^2.2.1",
@@ -90,7 +90,7 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "electron .",
     "start": "electron-packager ."
   },
   "keywords": [],
