@@ -31,7 +31,6 @@ app.on('window-all-closed', () => {
 })
 // ELECTRON END
 
-
 function remove_dot(x)
 {
     return x.split(/[.,]/).join("");
