@@ -1,4 +1,4 @@
-Install Depedencies pada folder menggunakan terminal
+Install Depedencies pada folder menggunakan terminal (Node.js)
 
 
 node modules depedencies:
