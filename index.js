@@ -561,6 +561,7 @@ function nilai_input() {
     var tahun_kendaraan = tahun_sekarang - tahun;
     var biaya_reload = 0;
 
+    // MAX 10 Tahun
     if(tahun_kendaraan==5)
     {
         biaya_reload = nilai_bawah * 0.05;
