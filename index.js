@@ -549,6 +549,12 @@ function nilai_input() {
         }
     }
 
+    // HASIL AWAL
+    var nilai_bawah_raw = nilai*batas_bawah;
+
+    // PEMBULATAN
+    var nilai_bawah = Math.floor(nilai_bawah_raw);
+
     // PREMI TAHUN
     const date = new Date();
     let tahun_sekarang = date.getFullYear();
@@ -557,34 +563,29 @@ function nilai_input() {
 
     if(tahun_kendaraan==5)
     {
-        biaya_reload = nilai * 0.05;
+        biaya_reload = nilai_bawah * 0.05;
     }
     else if(tahun_kendaraan==6)
     {
-        biaya_reload = nilai * 0.1;
+        biaya_reload = nilai_bawah * 0.1;
     }
     else if(tahun_kendaraan==7)
     {
-        biaya_reload = nilai * 0.15;
+        biaya_reload = nilai_bawah * 0.15;
     }
     else if(tahun_kendaraan==8)
     {
-        biaya_reload = nilai * 0.2;
+        biaya_reload = nilai_bawah * 0.2;
     }
     else if(tahun_kendaraan==9)
     {
-        biaya_reload = nilai * 0.25;
+        biaya_reload = nilai_bawah * 0.25;
     }
     else if(tahun_kendaraan==10)
     {
-        biaya_reload = nilai * 0.3;
+        biaya_reload = nilai_bawah * 0.3;
     }
 
-    // HASIL AWAL
-    var nilai_bawah_raw = nilai*batas_bawah;
-
-    // PEMBULATAN
-    var nilai_bawah = Math.floor(nilai_bawah_raw);
 
     // OUTPUT
     var output =  nilai_bawah + biaya_tjh + biaya_reload + biaya_kerusuhan + biaya_terorisme + biaya_tjhp + biaya_kecelakaan + biaya_banjir + biaya_gempa;
