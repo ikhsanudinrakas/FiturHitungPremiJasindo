@@ -5,7 +5,7 @@ function remove_dot(x)
 
 function add_comma(x)
 {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 function nilai_input() {
