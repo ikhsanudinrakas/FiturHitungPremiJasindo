@@ -586,7 +586,6 @@ function nilai_input() {
         biaya_reload = nilai_bawah * 0.3;
     }
 
-
     // OUTPUT
     var output =  nilai_bawah + biaya_tjh + biaya_reload + biaya_kerusuhan + biaya_terorisme + biaya_tjhp + biaya_kecelakaan + biaya_banjir + biaya_gempa;
 
