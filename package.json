@@ -1,11 +1,11 @@
 {
   "devDependencies": {
-    "electron": "^19.0.10",
+    "electron": "^19.0.11",
     "electron-packager": "^15.5.1"
   },
-  "name": "apk_asuransi_jasindo",
+  "name": "Kalkulator_Premi_Kendaraan",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
     "boolean": "^3.2.0",
     "buffer-crc32": "^0.2.13",

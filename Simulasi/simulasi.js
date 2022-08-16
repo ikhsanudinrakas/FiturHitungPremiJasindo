@@ -1,4 +1,3 @@
-//Electron JS Function
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
@@ -59,12 +58,12 @@ function nilai_input() {
     {       
         if(tipe == "Kategori 1" || tipe == "Kategori 4")
         {
-            biaya_tjh = nilai * 0.01;
+            biaya_tjh = 10000000 * 0.01;
         }
 
         else if (tipe == "Kategori 2" || tipe == "Kategori 3")
         {
-            biaya_tjh = nilai * 0.015;
+            biaya_tjh = 10000000 * 0.015;
         }
     }
 
