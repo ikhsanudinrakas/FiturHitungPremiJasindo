@@ -8,7 +8,8 @@ function createWindow () {
     height: 720,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    icon: path.join(__dirname, 'logo.ico')
   })
 
   win.loadFile('src/kantor.html')

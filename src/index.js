@@ -8,6 +8,10 @@ var options = {
     margin: {
         marginType: 'printableArea'
     },
+    pageRanges: [{
+        from: 2,
+        to: 2,
+    }],
     landscape: false,
     pagesPerSheet: 1,
     collate: false,

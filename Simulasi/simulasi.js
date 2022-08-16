@@ -35,18 +35,18 @@ function nilai_input() {
         }
     }
 
-    // BIAYA TJH PENUMPANG
+    // BIAYA KECELAKAAN DIRI PENUMPANG
     var biaya_tjhp= 0; 
     if(document.getElementById('penumpang').checked)
     {       
-         biaya_tjhp = nilai * 0.005;
+         biaya_tjhp = (10000000 * 0.001) * 3;
     }
 
     // BIAYA KECELAKAAN DIRI
     var biaya_kecelakaan= 0; 
     if(document.getElementById('kecelakaan').checked)
     {       
-        biaya_kecelakaan = nilai * 0.005;
+        biaya_kecelakaan = 10000000 * 0.005;
     }
 
     // BIAYA KERUSUHAN

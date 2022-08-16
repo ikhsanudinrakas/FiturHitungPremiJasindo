@@ -2,6 +2,8 @@
 
 *{
     font-family: 'Ubuntu', sans-serif;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
 }
 
 .simulasi-title{
@@ -330,7 +332,7 @@
     padding: 1.5rem;
     border-radius: 5px;
     margin-left: 4rem;
-    margin-bottom: 8rem;
+    margin-bottom: 9rem;
     background: #004271;
     color: white;
     font-size: 1rem;
@@ -342,6 +344,15 @@
     background: transparent;
     color:#004271;
     border-color: #004271;
+}
+
+.black{
+    color: black;
+}
+
+/* get background colors to show */
+@media print {
+    body { print-color-adjust: exact; }
 }
 
 /* MEDIA QUERIES (MEDIUM DEVICES) */

@@ -689,7 +689,7 @@ function nilai_input() {
     document.getElementById("gempa-tarif").innerHTML= persen_gempa*100+" %";
     document.getElementById("gempa-premi").innerHTML= "+ Rp. "+add_comma(biaya_gempa);
 
-    document.getElementById("diskon-harga").innerHTML= "Rp. "+add_comma(nilai);
+    document.getElementById("diskon-harga").innerHTML= "Rp. "+add_comma(output);
     document.getElementById("diskon-tarif").innerHTML= diskon+" %";
     document.getElementById("diskon-premi").innerHTML= "- Rp. "+add_comma(output*biaya_diskon);
 
